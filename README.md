@@ -127,3 +127,24 @@ docker push s237069/frontend:1.0
 - Frontend: https://hub.docker.com/r/s237069/frontend
 
 **Lưu ý:** `VITE_API_URL` được thiết lập khi build Frontend. Khi triển khai lên Render, cần build lại Frontend với URL Backend công khai thay cho `http://localhost:5001`.
+
+## Câu 7. Triển khai Frontend trên Render
+
+- Render Service: web-237069
+- Frontend URL: [DÁN URL THẬT Ở ĐÂY]
+- Docker Hub Image: https://hub.docker.com/r/s237069/frontend
+
+## Câu 8. Triển khai Backend API trên Render
+
+- Render Service: api-237069
+- Backend URL: https://api-237069.onrender.com
+- Health Check: https://api-237069.onrender.com/health
+- API Devices: https://api-237069.onrender.com/api/devices
+- Docker Hub Image: https://hub.docker.com/r/s237069/backend
+- Database: 237069_NguyenThienLy
+- Collection: devices
+
+## Cơ sở dữ liệu MongoDB Atlas
+
+- Database: 237069_NguyenThienLy
+- Collection: devices

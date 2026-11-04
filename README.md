@@ -1,25 +1,33 @@
-# QUẢN LÝ THIẾT BỊ PHÒNG HỌC
+## Câu 5: Dockerize Backend
 
-## 1. Giới thiệu
-Xây dựng website quản lý thiết bị phòng học.
+### 1. Docker Image
 
-## 2. Công nghệ sử dụng
-- React
-- Node.js
-- Express
-- MongoDB Atlas
-- GitHub
-- Docker
-- Docker Hub
-- Render
+- Docker Hub Repository: https://hub.docker.com/r/s237069/backend
+- Image: `s237069/backend:1.0`
 
-## 3. Cấu trúc dự án
-- frontend: Giao diện React
-- backend: API Node.js Express
+### 2. Build Docker Image
 
-## 4. Chức năng
-- Xem danh sách thiết bị
-- Thêm thiết bị
-- Sửa thiết bị
-- Xóa thiết bị
-- Tìm kiếm thiết bị
+```bash
+cd backend
+docker build -t device-backend .
+```
+
+### 3. Chạy Docker Container
+
+```bash
+docker run -d --name device-backend -p 5001:5000 --env-file .env device-backend
+```
+
+### 4. Kiểm tra Backend
+
+- Health check: http://localhost:5001/health
+- API thiết bị: http://localhost:5001/api/devices
+
+### 5. Push Image lên Docker Hub
+
+```bash
+docker tag device-backend s237069/backend:1.0
+docker push s237069/backend:1.0
+```
+
+**Lưu ý:** File `.env` chứa thông tin kết nối MongoDB và không được đưa lên GitHub hoặc Docker Hub.
